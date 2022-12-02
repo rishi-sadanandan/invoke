@@ -7,6 +7,11 @@ CORS(app)
 
 BASE_ROUTE = '/prompt'
 
+@app.route(BASE_ROUTE, methods=['POST'])
+def to_upper():
+  data = request.get_json()
+  return jsonify(data['text'].upper())
+
 @app.route(BASE_ROUTE, methods=['GET'])
 def get_message():
   return jsonify({'message': 'Hello from your new Amplify Python lambda!'})

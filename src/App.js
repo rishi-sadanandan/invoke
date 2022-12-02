@@ -28,7 +28,9 @@ function App() {
   // send the text to the backend amplify api function
   const handleButtonClickText = async () => {
     const myInit = {
-      body: text,
+      body: {
+        text: text,
+      },
     };
 
     try {
